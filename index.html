@@ -1,0 +1,92 @@
+<!--     © Vihaan Sharmaa | Binary Bytes     -->
+<!--           All Rights Reserved           -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>The Gruffalo</title>
+
+    <link rel="stylesheet" href="assets/libraries/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2 id="text" class="animate__animated animate__zoomInUp"><span>Story</span><br>The Gruffalo</h2>
+
+        <img src="assets/images/elements/bird1.png" alt="Bird 1" id="bird1" class="animate__animated animate__backInRight">
+        <img src="assets/images/elements/bird2.png" alt="Bird 2" id="bird2" class="animate__animated animate__backInLeft">
+        <img src="assets/images/elements/forest.png" alt="Forest" id="forest" class="animate__animated animate__pulse">
+        <img src="assets/images/elements/rocks.png" alt="Rocks" id="rocks" class="animate__animated animate__pulse">
+        <img src="assets/images/elements/water.png" alt="Water" id="water" class="animate__animated animate__pulse">
+
+        <img src="assets/images/characters/mouse.png" alt="The Mouse" id="mouse" class="animate__animated animate__zoomInLeft">
+        <img src="assets/images/characters/gruffalo.png" alt="The Gruffalo" id="gruffalo" class="animate__animated animate__zoomInRight">
+    </section>
+
+    <div class="main">
+        <p id="progressText" class="animate__animated">Story in progress...</p>
+    </div>
+
+    <script src="assets/libraries/scroll-out.js"></script>
+    <script>
+        //     © Vihaan Sharmaa | Binary Bytes     //
+        //           All Rights Reserved           //
+
+        // Elements
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+
+        // Characters
+        let mouse = document.getElementById('mouse');
+        let gruffalo = document.getElementById('gruffalo');
+
+        window.addEventListener('scroll', (e) => {
+            e.preventDefault();
+            let value = window.scrollY;
+
+            // Elements
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+
+            // Characters
+            mouse.style.top = 38 + value * 0.1 + '%';
+            gruffalo.style.left = 75 + value * 0.1 + '%';
+        });
+    </script>
+    <script>
+        //     © Vihaan Sharmaa | Binary Bytes     //
+        //           All Rights Reserved           //
+        
+        ScrollOut({
+            targets: '#progressText'
+        });
+
+        window.addEventListener('scroll', (e) => {
+            e.preventDefault();
+
+            progressText = document.getElementById('progressText');
+
+            if (progressText.getAttribute('data-scroll') == 'in') {
+                progressText.classList.remove('animate__fadeOut');
+                progressText.classList.add('animate__bounceInUp');
+            } else {
+                progressText.classList.remove('animate__bounceInUp');
+                progressText.classList.add('animate__fadeOut');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/*     © Vihaan Sharmaa | Binary Bytes     */
+/*           All Rights Reserved           */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Rancho&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rancho', cursive;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, black, transparent);
+    z-index: 10;
+}
+
+section #text {
+    position: absolute;
+    color: black;
+    font-size: 10vw;
+    text-align: center;
+    line-height: 0.55em;
+    transform: translateY(-50%);
+}
+
+section #text span {
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #mouse {
+    top: 38%;
+    left: 10%;
+    height: 30%;
+    width: auto;
+    z-index: 10;
+}
+
+section #gruffalo {
+    top: 41%;
+    left: 75%;
+    height: 30%;
+    width: auto;
+}
+
+.main {
+    position: relative;
+    padding: 100px;
+    background:  black;
+    max-width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main p {
+    font-size: 6vw;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 725px) {
+    section #mouse {
+        left: -15%;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    section #mouse {
+        left: -24%;
+    }
+}
